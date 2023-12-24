@@ -87,7 +87,7 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
       </div>
       <div className="m-3">
         <h1 className="text-5xl my-7 font-extrabold text-white">Gallery</h1>
-        <div className="flex gap-3 flex-col md:flex-row">
+        {/* <div className="flex gap-3 flex-col md:flex-row">
           {anime.videos.map((video: any) => (
             <iframe
               key={video.id}
@@ -96,7 +96,7 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
               title={video.name}
             />
           ))}
-        </div>
+        </div> */}
         <div className="flex gap-2 flex-col md:flex-row m-3">
           {anime.screenshots.map((screenshot: any) => (
             <div key={screenshot.original}>
