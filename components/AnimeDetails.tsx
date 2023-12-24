@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/button";
+import Image from "next/image";
 import React from "react";
 interface AnimeDetailsProps {
   anime: any; // Replace 'any' with a more specific type based on your data structure
@@ -20,10 +21,12 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
         //   }}
       >
         <div className="w-full md:w-1/3">
-          <img
+          <Image
             src={`https://shikimori.one${anime.image.original}`}
             alt={anime.name}
             className="rounded"
+            height={400}
+            width={400}
           />
           <h1 className="my-3 text-3xl">
             {anime.name} ( {anime.japanese} )
@@ -71,7 +74,7 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
           <p className="py-2 my-3">{anime.description}</p>{" "}
           {anime.studios.map((studio: any) => (
             <div key={studio.id}>
-              <img
+              <Image
                 src={`https://shikimori.one${studio.image}`}
                 alt={studio.name}
                 height={300}
@@ -97,11 +100,13 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
         <div className="flex gap-2 flex-col md:flex-row m-3">
           {anime.screenshots.map((screenshot: any) => (
             <div>
-              <img
+              <Image
                 key={screenshot.original}
                 src={`https://shikimori.one${screenshot.original}`}
                 alt="Screenshot"
                 className="flex-1 h-auto w-full"
+                height={500}
+                width={750}
               />
             </div>
           ))}
