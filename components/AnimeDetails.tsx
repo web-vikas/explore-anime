@@ -99,9 +99,8 @@ const AnimeDetails: React.FC<AnimeDetailsProps> = ({ anime }) => {
         </div>
         <div className="flex gap-2 flex-col md:flex-row m-3">
           {anime.screenshots.map((screenshot: any) => (
-            <div>
+            <div key={screenshot.original}>
               <Image
-                key={screenshot.original}
                 src={`https://shikimori.one${screenshot.original}`}
                 alt="Screenshot"
                 className="flex-1 h-auto w-full"
